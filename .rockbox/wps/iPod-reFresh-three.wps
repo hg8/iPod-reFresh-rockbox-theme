@@ -1,0 +1,135 @@
+###############################################################
+# Theme: iPod reFresh Three                                   #
+# By: Ciprian Dragu, v1.0, January 2022                             #
+# License: CC-BY-SA 3.0 Creative Commons Attribution-Share    #
+#   Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)#
+# Version: 1.0                                                #
+# Last Update: January 2022                                   #
+# Device: ipod classic                                        #
+# Description: As this is my first theme and encounter with   #
+#   SBS/WPS customization, I took inspiration (code, ideas    #
+#   and graphics) from some beautiful themes already          #
+#   available, and I thank the creators for their great work: #
+#   - iRB_Modern by I R D                                     #
+#   - Nightpod by Christian Soffke                            #
+#   - FreshOS by c-yu (yuuiko)                                #
+#   - bill-2020 by Laurentiu B                                #
+###############################################################
+#
+# WPS File
+#
+#-- Hide The Status Bar
+%wd
+#
+#-- Load Backdrop
+%X(backdrop-wps.bmp)
+#
+#-- Preload Fonts
+%Fl(5,14-SF-Pro-Rounded-Semibold.fnt)
+%Fl(6,16-SF-Pro-Rounded-Semibold.fnt)
+%Fl(7,20-SF-Pro-Rounded-Semibold.fnt)
+%Fl(8,28-SF-Pro-Rounded-Semibold.fnt)
+#
+#-- Preload Images
+%xl(B,disk.bmp,0,0,6)
+%xl(C,pb.bmp,0,0)
+%xl(D,pb_back.bmp,0,0)
+%xl(E,battery.bmp,0,0,25)
+%xl(G,volume.bmp,0,0,21)
+%xl(H,status.bmp,0,0,4)
+%xl(M,shuffle.bmp,0,0)
+%xl(N,repeat.bmp,0,0,4)
+%xl(O,hold.bmp,0,0)
+%xl(P,lossless.bmp,0,0)
+%xl(w,cornerTL.bmp,0,0)
+%xl(x,cornerTR.bmp,122,0)
+%xl(y,cornerBL.bmp,0,122)
+%xl(z,cornerBR.bmp,122,122)
+#
+##############
+# STATUS BAR #
+##############
+#
+#-- Status icons
+%V(5,8,23,15,-)%Vf(ffffff)%Vb(F4F4F4)
+%?mp<|%xd(Ha)|%xd(Hb)|%xd(Hc)|%xd(Hd)||||>
+#
+#-- Disk working
+%V(30,8,16,16,-)
+%?lh<%t(0.1)%xd(Ba);%t(0.1)%xd(Bb);%t(0.1)%xd(Bc);%t(0.1)%xd(Bd);%t(0.1)%xd(Be);%t(0.1)%xd(Bf)>
+#
+#-- Hold icon
+%V(52,8,13,15,-)%Vf(ffffff)%Vb(F4F4F4)
+%?mh<%xd(O)|%?mr<%xd(O)>>
+#
+#-- Status title
+%V(100,7,120,16,6)%Vf(ffffff)%Vb(F4F4F4)
+#%ac%cb %ce%, %?cf<%cH:%cM|%cl:%cM %cP>
+%s%ac%?pS(15)<Now Playing|%?cf<%cH:%cM|%cl:%cM %cP>>
+#
+#-- Battery percentage
+%V(244,7,32,16,6)%Vf(ffffff)%Vb(F4F4F4)
+%ar%bl%%
+#
+#-- Battery icon top right
+%V(-41,8,31,15,-)%Vf(ffffff)%Vb(F4F4F4)
+%?St(usb charging)<%?bp<%xd(Ey)|%?bl<%xd(El)|%xd(Ek)|%xd(Ej)|%xd(Ei)|%xd(Eh)|%xd(Eg)|%xd(Ef)|%xd(Ee)|%xd(Ed)|%xd(Ec)|%xd(Eb)|%xd(Ea)>>|%?bp<%?bc<%?bl<%xd(Ex)|%xd(Ew)|%xd(Ev)|%xd(Eu)|%xd(Et)|%xd(Es)|%xd(Er)|%xd(Eq)|%xd(Ep)|%xd(Eo)|%xd(En)|%xd(Em)>|%xd(Ey)>|%?bl<%xd(El)|%xd(Ek)|%xd(Ej)|%xd(Ei)|%xd(Eh)|%xd(Eg)|%xd(Ef)|%xd(Ee)|%xd(Ed)|%xd(Ec)|%xd(Eb)|%xd(Ea)>>>
+#
+###########
+# CONTENT #
+###########
+#
+#-- Album art
+%Cl(0,0,136,136)
+# Album Art
+%V(13,30,136,136,-)
+#%?C<%Cd>
+#
+#-- Album art round corners
+%?mh<%Cd%?C<%xd(w)%xd(x)%xd(y)%xd(z)|>|%Cd%?C<%xd(w)%xd(x)%xd(y)%xd(z)|>> #refresh art on Hold
+#
+#-- Title
+%V(163,60,144,30,8)%Vf(ffffff)
+%al%s%?it<%s%it|%fn>
+#
+#-- Artist
+%V(163,90,144,25,7)%Vf(ffffff)
+%al%s%?ia<%ia|%?d(2)<%d(2)|%Sx(Artist)>>
+#
+#-- Lossless
+# determine if 'lossless', aiff=4, wave=5, flac=7, alac=11, shorten=13
+%?or(%if(%fc, =, 4),%if(%fc, =, 5),%if(%fc, =, 7),%if(%fc, =, 11),%if(%fc, =, 13))<%Vd(lossless)>
+#-- Lossless Indicator Image
+%Vl(lossless,162,126,63,17,-)
+%Vb(fffffff)
+%xd(P)
+#
+#-- File details
+%V(163,145,144,18,5)%Vf(ffffff)
+%fc, %fbkbps %fkkhz
+#
+#-- Progress Bar
+# With a little hacking to make border look nice
+%V(13,181,294,5,0)
+%pb(0,0,294,5,D,backdrop,C)
+#
+#-- Song Current Time
+%V(13,188,57,16,5)
+%al%pc
+#
+#-- Song Remaining Time
+%V(249,188,57,16,5)
+%ar-%pr
+#
+#-- Volume
+%V(96,199,36,36,-)
+%?mv(1.0)<%?pv<%xd(Ga)|%xd(Gb)|%xd(Gc)|%xd(Gd)|%xd(Ge)|%xd(Gf)|%xd(Gg)|%xd(Gh)|%xd(Gi)|%xd(Gj)|%xd(Gk)|%xd(Gl)|%xd(Gm)|%xd(Gn)|%xd(Go)|%xd(Gp)|%xd(Gq)|%xd(Gr)|%xd(Gs)|%xd(Gt)|%xd(Gu)>>
+#
+#-- Repeat
+%V(144,207,26,20,-)
+%?mm<|%xd(Na)|%xd(Nb)|%xd(Nc)|%xd(Nd)>
+#
+#-- Shuffle
+%V(191,207,26,20,-)
+%?ps<%xd(Ma)>
+#

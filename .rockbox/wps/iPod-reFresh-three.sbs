@@ -1,0 +1,107 @@
+###############################################################
+# Theme: iPod reFresh Three                                   #
+# By: Ciprian Dragu, v1.0, January 2022                             #
+# License: CC-BY-SA 3.0 Creative Commons Attribution-Share    #
+#   Alike 3.0 (http://creativecommons.org/licenses/by-sa/3.0/)#
+# Version: 1.0                                                #
+# Last Update: January 2022                                   #
+# Device: ipod classic                                        #
+# Description: As this is my first theme and encounter with   #
+#   SBS/WPS customization, I took inspiration (code, ideas    #
+#   and graphics) from some beautiful themes already          #
+#   available, and I thank the creators for their great work: #
+#   - iRB_Modern by I R D                                     #
+#   - Nightpod by Christian Soffke                            #
+#   - FreshOS by c-yu (yuuiko)                                #
+#   - bill-2020 by Laurentiu B                                #
+###############################################################
+#
+# SBS File
+#
+#-- Hide The Status Bar
+%wd
+#
+#-- Title Bar Disabler
+%?Lt<|>
+#
+#-- Backdrop
+%X(backdrop-sbs.bmp) 
+#
+#-- PreLoad Fonts
+%Fl(4,16-SF-Pro-Rounded-Semibold.fnt)
+%Fl(6,20-SF-Pro-Rounded-Semibold.fnt)
+#
+#-- Preloaded Images
+%xl(B,disk.bmp,0,0,6)
+%xl(E,battery.bmp,0,0,25)
+%xl(H,status.bmp,0,0,4)
+%xl(I,usb.bmp,0,0)
+%xl(O,hold.bmp,0,0)
+#
+#
+##############
+# STATUS BAR #
+##############
+#
+#-- Status icons
+%V(5,8,23,15,-)%Vf(ffffff)%Vb(F4F4F4)
+%?mp<|%xd(Ha)|%xd(Hb)|%xd(Hc)|%xd(Hd)||||>
+#
+#-- Disk working
+%V(30,8,16,16,-)
+%?lh<%t(0.1)%xd(Ba);%t(0.1)%xd(Bb);%t(0.1)%xd(Bc);%t(0.1)%xd(Bd);%t(0.1)%xd(Be);%t(0.1)%xd(Bf)>
+#
+#-- Hold icon
+%V(52,8,13,15,-)%Vf(ffffff)%Vb(F4F4F4)
+%?mh<%xd(O)|%?mr<%xd(O)>>
+#
+#-- Status title
+%V(100,7,120,16,4)%Vf(ffffff)%Vb(F4F4F4)
+#%ac%cb %ce%, %?cf<%cH:%cM|%cl:%cM %cP>
+%s%ac%?cs<%?cf<%cH:%cM|%cl:%cM %cP>|Now Playing|Recording|Radio|Playlist|Settings|Browser|Database|Plugins|Quickscreen|Pitchscreen|Settings|Playlists|Plugin|Context|System|Date/Time|Bookmark|Shortcuts|Info|USB Connected>
+#
+#-- Battery percentage
+%V(244,7,32,16,4)%Vf(ffffff)%Vb(F4F4F4)
+%ar%bl%%
+#
+#-- Battery icon top right
+%V(-41,8,31,15,-)%Vf(ffffff)%Vb(F4F4F4)
+%?St(usb charging)<%?bp<%xd(Ey)|%?bl<%xd(El)|%xd(Ek)|%xd(Ej)|%xd(Ei)|%xd(Eh)|%xd(Eg)|%xd(Ef)|%xd(Ee)|%xd(Ed)|%xd(Ec)|%xd(Eb)|%xd(Ea)>>|%?bp<%?bc<%?bl<%xd(Ex)|%xd(Ew)|%xd(Ev)|%xd(Eu)|%xd(Et)|%xd(Es)|%xd(Er)|%xd(Eq)|%xd(Ep)|%xd(Eo)|%xd(En)|%xd(Em)>|%xd(Ey)>|%?bl<%xd(El)|%xd(Ek)|%xd(Ej)|%xd(Ei)|%xd(Eh)|%xd(Eg)|%xd(Ef)|%xd(Ee)|%xd(Ed)|%xd(Ec)|%xd(Eb)|%xd(Ea)>>>
+#
+###########
+# CONTENT #
+###########
+#
+# 	Display bar on bottom with album art, track info or volume indicator as necessary
+%?mp<|%?C<%Vd(albumart)%Vd(currenttrack)|%Vd(currenttrackshiftedleft)>|%?C<%Vd(albumart)%Vd(currenttrack)|%Vd(currenttrackshiftedleft)>>
+#
+# 	Set up UI Viewport 
+# 	Use larger viewport if nothing is playing
+%?mp<%VI(mainlarge)|%VI(main)|%VI(main)>
+#
+#	Smaller viewport to make room for larger bar on bottom
+%Vi(main,8,32,304,172,6)%Vf(ffffff)%Vb(F4F4F4)
+#
+#	Larger Viewport if nothing is playing
+%Vi(mainlarge,8,32,304,208,6)%Vf(ffffff)%Vb(F4F4F4)
+#
+#	USB screen
+#%V(0,0,320,240,-)%Vf(ffffff)%Vb(F4F4F4)
+#%?if(%cs, =, 21)<%xd(I)>
+#
+#-- Track background
+#%Vl(trackbg,0,208,320,32,-)%Vf(ffffff)%Vb(F4F4F4)
+#%xd(A)
+#
+# 	Album Art
+%Vl(albumart,12,-36,30,30,-)%Vf(ffffff)%Vb(F4F4F4)
+%Cl(0,0,30,30)%Vf(ffffff)%Vb(F4F4F4)
+%Cd
+#
+#	Current Track
+%Vl(currenttrack,50,-29,-11,-,4)%Vf(ffffff)%Vb(F4F4F4)
+%s%al%?ia<%ia - |>%?it<%it|%fn>
+#
+#	Current Track shifted left
+%Vl(currenttrackshiftedleft,11,-29,-11,-,4)%Vf(ffffff)%Vb(F4F4F4)
+%s%al%?ia<%ia - |>%?it<%it|%fn>
