@@ -25,6 +25,8 @@
 %X(backdrop-wps.bmp)
 #
 #-- Preload Fonts
+%Fl(3,18-Cantarell-Regular.fnt)
+%Fl(4,20-Cantarell-Bold.fnt)
 %Fl(5,14-SF-Pro-Rounded-Semibold.fnt)
 %Fl(6,16-SF-Pro-Rounded-Semibold.fnt)
 %Fl(7,20-SF-Pro-Rounded-Semibold.fnt)
@@ -89,11 +91,11 @@
 %?mh<%Cd%?C<%xd(w)%xd(x)%xd(y)%xd(z)|>|%Cd%?C<%xd(w)%xd(x)%xd(y)%xd(z)|>> #refresh art on Hold
 #
 #-- Title
-%V(163,60,144,30,8)%Vf(ffffff)
+%V(163,60,144,30,4)%Vf(ffffff)
 %al%s%?it<%s%it|%fn>
 #
 #-- Artist
-%V(163,90,144,25,7)%Vf(ffffff)
+%V(163,90,144,25,3)%Vf(ffffff)
 %al%s%?ia<%ia|%?d(2)<%d(2)|%Sx(Artist)>>
 #
 #-- Lossless
