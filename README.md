@@ -15,6 +15,13 @@ This fork aims to bring support for CKJ (Chinese, Korean, Japanese) fonts to the
 - Adjustments and optimizations in the theme layout to accommodate the new font types without disrupting the original design aesthetics.
 - Bug fixes and minor improvements to enhance the overall user experience.
 
+## Available Versions
+
+Two versions of the theme, are available in [Releases](https://github.com/hg8/iPod-reFresh-rockbox-theme/releases):
+
+- **[iPod reFresh Three](https://github.com/hg8/iPod-reFresh-rockbox-theme/tree/main)** 
+- **[iPod reFresh Four](https://github.com/hg8/iPod-reFresh-rockbox-theme/tree/four)** 
+
 ## Installation
 1. Download the theme from this repository.
 2. Extract the theme files to your Rockbox themes directory on your iPod.
