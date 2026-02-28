@@ -29,7 +29,7 @@
 #
 #-- PreLoad Fonts
 %Fl(4,16-SF-Pro-Rounded-Semibold.fnt)
-%Fl(6,20-SF-Pro-Rounded-Semibold.fnt)
+%Fl(6,18-Cantarell-Regular.fnt)
 #
 #-- Preloaded Images
 %xl(B,disk.bmp,0,0,6)
@@ -99,9 +99,9 @@
 %Cd
 #
 #	Current Track
-%Vl(currenttrack,50,-29,-11,-,4)%Vf(ffffff)%Vb(F4F4F4)
+%Vl(currenttrack,50,-29,-11,-,6)%Vf(ffffff)%Vb(F4F4F4)
 %s%al%?ia<%ia - |>%?it<%it|%fn>
 #
 #	Current Track shifted left
-%Vl(currenttrackshiftedleft,11,-29,-11,-,4)%Vf(ffffff)%Vb(F4F4F4)
+%Vl(currenttrackshiftedleft,11,-29,-11,-,6)%Vf(ffffff)%Vb(F4F4F4)
 %s%al%?ia<%ia - |>%?it<%it|%fn>
